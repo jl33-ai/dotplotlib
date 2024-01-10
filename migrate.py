@@ -41,3 +41,30 @@ plt.xlabel("Release year", size=14)
 plt.title("Movies seen by year and rating", size=20)
 plt.gcf().text(0.83, 0.5, "Rating", fontsize=14, rotation=90)  # Label used for colormap.
 plt.show()
+
+
+# +=====================================+
+sns.set(rc={'axes.facecolor': 'lavender'})  # Background color for the plot
+
+# Dot plot created using scatter plot
+plt.figure(figsize=(20, 2))
+
+include_ongoing = str(input("Do you want to include the current, unresolved tickets? (Y/N): ")).lower()
+if include_ongoing == 'y':
+    # Scatterplot for NaN data.
+    ax = sns.scatterplot(x=data_na['arrival_date'], y=tickets_by_day_count_na, 
+                        color='#142c5c', s=DOT_SIZE, legend=False)
+    ax.xaxis.set_major_locator(mdates.DayLocator(interval=15)) 
+
+# Scatterplot for non-NaN data.
+ax = sns.scatterplot(x=data_not_na['arrival_date'], y=tickets_by_day_count, 
+                    hue=data_not_na['full_resolution_time_standardized'], s=DOT_SIZE, 
+                    legend="full", palette="RdYlGn")
+ax.xaxis.set_major_locator(mdates.DayLocator(interval=15)) 
+
+ax.grid(False)
+ax.get_legend().remove()
+plt.ylabel("Ticket Count", size=14)
+plt.ylim([0, 18])
+plt.xlabel("Date", size=14)
+plt.show()
