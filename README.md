@@ -1,4 +1,4 @@
-![](/demos/daterange.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png)
 
 *Great things come in tiny packages*. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
 - Designed to work with `matplotlib` and `seaborn`.
@@ -76,7 +76,7 @@ make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='g
 
 ### `custom:lavender`
 
-![](/demos/lavender.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/lavender.png)
 
 ### `cmap`
 
@@ -84,11 +84,11 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 **viridis:**
 
-![](/demos/default.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/default.png)
 
 **gnuplot:**
 
-![](/demos/gnuplot.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gnuplot.png)
 
 ---
 
@@ -101,3 +101,7 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 - set custom labels, titles, and dot sizes for your charts.
 
 # credit
+
+- [pjarzabek](https://github.com/Pjarzabek/DotPlotPython/blob/master/How%20to%20create%20dot%20plots%20in%20Python.ipynb)
+- m3
+- ddlegal
