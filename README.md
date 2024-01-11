@@ -12,8 +12,6 @@ pip install dotplotlib
 
 # usage
 
-### fully customizable 
-
 First, import the package.
 
 ```python
@@ -34,10 +32,29 @@ plt.scatter(x)
 plt.show()
 ```
 
-# examples (1: basic matplotlib, 2: seaborn, 3: affinda)
+# preset themes
 
+Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
-Let's say you have data like this. Each row represents a mushroom. 
+### `custom:lavender`
+
+![](/demos/lavender.svg)
+
+### `cmap`
+
+Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable/users/explain/colors/colormaps.html)) will work when passed into `theme='viridis'`.
+
+**viridis**
+
+![](/demos/default.svg)
+
+**gnuplot**
+
+![](/demos/gnuplot.svg)
+
+# full worked example
+
+Let's say you have data like this. Each row represents a mushroom. It is loaded into a `pandas.DataFrame` object called `data`
 
 ```text
           size   rating
@@ -53,26 +70,14 @@ Let's say you have data like this. Each row represents a mushroom.
 ```
 
 ```python
-from dotplotlib import dotplot
+x, y, c = dotchart(data['size'], color_by=data['rating'])
 
-plt.scatter(x, y)
+plt.scatter(x, y, c=c, cmap='viridis')  
+plt.colorbar()  
+plt.xlabel('Size')
+plt.ylabel('Number')
+plt.title('Mushroom Size Count Colored by Rating')
+plt.show()
 ```
 
-### preset themes
 
-1. `lavender`
-
-2. `default` 
-
-3. `console`
-
-
-```python
-from dotplotlib import dotplot
-
-x, y, c = dotplot.create(x=mushroom['size'], color_by=mushroom['rating'])
-```
-
-# credits
-
-- I got the formatting code from 
