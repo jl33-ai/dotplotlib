@@ -94,8 +94,10 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 # features
 
-- **Customizable Color Mapping**: supports any
-- **Theme Support**: Apply different themes to your chart.
-- **Automatic Sorting**: The data can be automatically sorted for better visualization, especially when using color mapping.
-- **Flexible Data Input**: Accepts both list and pandas.Series as input data.
-- **Customizable Chart Elements**: Set custom labels, titles, and dot sizes for your charts.
+- generate strip plots/dot charts by exploiting `matplotlib/seaborn` scatterplots
+- supports any cmap color profile
+- the data can be automatically sorted for better visualization, especially when using color mapping.
+- accepts both list and pandas.Series as input data.
+- set custom labels, titles, and dot sizes for your charts.
+
+# credit

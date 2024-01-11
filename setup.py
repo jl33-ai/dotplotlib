@@ -15,7 +15,7 @@ setup(
     url='https://github.com/jl33-ai/dotplotlib',  
     packages=find_packages(),
     install_requires=[
-        'pandas>=1.0.0', 
+        'pandas', 
         'matplotlib',
         'seaborn' 
     ],
