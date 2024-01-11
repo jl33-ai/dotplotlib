@@ -1,3 +1,5 @@
+![](/demos/daterange.svg)
+
 Great things come in tiny packages. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
 - Designed to work with `matplotlib` and `seaborn` 
 - Hijacks `plt.scatter` or `sns.scatterplot` (optionally) to generate a dot plot. 
@@ -21,13 +23,15 @@ from dotplotlib import dotchart
 Then generate `x, y` data. Pass in just the column containing the unit that would go on the x-axis. 
 
 ```python
-x, y = dotplot(x=mushroom['size'])
+x, y = dotplot(x=data['size'])
 ```
 
 And that's all! Now you simply plot it as a `scatter` or `scatterplot`.
 
 ```python
 import matplotlib.pyplot as plt
+plt.scatter(x)
+plt.show()
 ```
 
 # examples (1: basic matplotlib, 2: seaborn, 3: affinda)
