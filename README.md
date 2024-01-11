@@ -1,8 +1,8 @@
-![](/demos/daterange.svg)
+![](/demos/daterange.png)
 
-Great things come in tiny packages. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
-- Designed to work with `matplotlib` and `seaborn` 
-- Hijacks `plt.scatter` or `sns.scatterplot` (optionally) to generate a dot plot. 
+*Great things come in tiny packages*. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
+- Designed to work with `matplotlib` and `seaborn`.
+- Provides a simple yet powerful interface for visualizing data distributions, frequencies and categories.
 
 # installation
 
@@ -10,35 +10,71 @@ Great things come in tiny packages. A bare minimum extension library with the so
 pip install dotplotlib
 ```
 
-# usage
+# basic usage
 
-First, import the package.
+`dotplotlib` can be used to generate dot charts with minimal code. Here are some basic examples
+
+### example 1: Simple Dot Chart
+
+`.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` scatterplots. 
 
 ```python
 from dotplotlib import dotchart
-```
-
-Then generate `x, y` data. Pass in just the column containing the unit that would go on the x-axis. 
-
-```python
-x, y = dotplot(x=data['size'])
-```
-
-And that's all! Now you simply plot it as a `scatter` or `scatterplot`.
-
-```python
 import matplotlib.pyplot as plt
-plt.scatter(x)
+
+# Data preparation
+data = {'size': [1, 2, 3, 4, 5, 6]}
+
+# Generate dot chart data
+x, y = dotchart(data['size'])
+
+# Plot
+plt.scatter(x, y)
 plt.show()
+```
+
+### example 2: Dot Chart with Color Mapping
+
+Returns an extra `c` list that should be passed into the `c=` parameter if using `matplotlib` or `hue=` if using `seaborn`. 
+
+```python
+from dotplotlib import dotchart
+import matplotlib.pyplot as plt
+
+# Data preparation
+data = {'size': [1, 2, 3, 4, 5, 6], 'rating': [3, 2, 5, 4, 3, 6]}
+
+# Generate dot chart data with color mapping
+x, y, c = dotchart(data['size'], color_by=data['rating'])
+
+# Plot with color mapping
+plt.scatter(x, y, c=c, cmap='viridis')
+plt.colorbar()
+plt.xlabel('Size')
+plt.ylabel('Number')
+plt.title('Mushroom Size Count Colored by Rating')
+plt.show()
+```
+
+### example 3: Using `make_dotchart` for Simplified Plotting
+
+Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot()` actually generates the plot. 
+
+```python
+from dotplotlib import make_dotchart
+
+# Data preparation
+test_df = {'size': [1, 2, 3, 4, 5, 6], 'rating': [3, 2, 5, 4, 3, 6]}
+
+# Create a dot chart with additional customization
+make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='gnuplot2')
 ```
 
 # preset themes
 
-Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot()` actually generates the plot. 
-
 ### `custom:lavender`
 
-![](/demos/lavender.svg)
+![](/demos/lavender.png)
 
 ### `cmap`
 
@@ -46,38 +82,18 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 **viridis**
 
-![](/demos/default.svg)
+![](/demos/default.png)
 
 **gnuplot**
 
-![](/demos/gnuplot.svg)
+![](/demos/gnuplot.png)
 
-# full worked example
+---
 
-Let's say you have data like this. Each row represents a mushroom. It is loaded into a `pandas.DataFrame` object called `data`
+# features
 
-```text
-          size   rating
---------------------------
-0            4        2
-1            5        7
-2            3        7
-3            3        3
-4            6        5
-5            4        3
-6            6        8
-7            8        9
-```
-
-```python
-x, y, c = dotchart(data['size'], color_by=data['rating'])
-
-plt.scatter(x, y, c=c, cmap='viridis')  
-plt.colorbar()  
-plt.xlabel('Size')
-plt.ylabel('Number')
-plt.title('Mushroom Size Count Colored by Rating')
-plt.show()
-```
-
-
+- **Customizable Color Mapping**: supports any
+- **Theme Support**: Apply different themes to your chart.
+- **Automatic Sorting**: The data can be automatically sorted for better visualization, especially when using color mapping.
+- **Flexible Data Input**: Accepts both list and pandas.Series as input data.
+- **Customizable Chart Elements**: Set custom labels, titles, and dot sizes for your charts.
