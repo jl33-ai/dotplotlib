@@ -6,10 +6,10 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='dotplotlib', 
-    version='0.1.3',  
+    version='0.1.6',  
     author='Justin Lee', 
     author_email='justinkhlee27@gmail.com',  
-    description='A basic extension library for creating strip plots or dot charts w/ matplotlib + seaboard',  
+    description='An extension library for creating strip plots or dot charts w/ matplotlib + seaboard',  
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/jl33-ai/dotplotlib',  

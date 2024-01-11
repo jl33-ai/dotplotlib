@@ -1,4 +1,4 @@
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png?raw=true)
 
 *Great things come in tiny packages*. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
 - Designed to work with `matplotlib` and `seaborn`.
@@ -23,7 +23,7 @@ from dotplotlib import dotchart
 import matplotlib.pyplot as plt
 
 # Data preparation
-data = {'size': [1, 2, 3, 4, 5, 6]}
+data = {'size': [1, 2, 2, 3, 3, 3, 4]}
 
 # Generate dot chart data
 x, y = dotchart(data['size'])
@@ -42,7 +42,7 @@ from dotplotlib import dotchart
 import matplotlib.pyplot as plt
 
 # Data preparation
-data = {'size': [1, 2, 3, 4, 5, 6], 'rating': [3, 2, 5, 4, 3, 6]}
+data = {'size': [1, 2, 2, 3, 3, 3, 4], 'rating': [3, 2, 5, 4, 3, 6, 4]}
 
 # Generate dot chart data with color mapping
 x, y, c = dotchart(data['size'], color_by=data['rating'])
@@ -64,7 +64,7 @@ Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot(
 from dotplotlib import make_dotchart
 
 # Data preparation
-test_df = {'size': [1, 2, 3, 4, 5, 6], 'rating': [3, 2, 5, 4, 3, 6]}
+test_df = {'size': [1, 2, 2, 3, 3, 3, 4], 'rating': [3, 2, 5, 4, 3, 6, 7]}
 
 # Create a dot chart with additional customization
 make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='gnuplot2')
@@ -76,7 +76,7 @@ make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='g
 
 ### `custom:lavender`
 
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/lavender.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/lavender.png?raw=true)
 
 ### `cmap`
 
@@ -84,11 +84,11 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 **viridis:**
 
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/default.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/default.png?raw=true)
 
 **gnuplot:**
 
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gnuplot.png)
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gnuplot.png?raw=true)
 
 ---
 
