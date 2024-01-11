@@ -14,7 +14,7 @@ pip install dotplotlib
 
 `dotplotlib` can be used to generate dot charts with minimal code. Here are some basic examples
 
-### example 1: Simple Dot Chart
+### Example 1: Simple Dot Chart
 
 `.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` scatterplots. 
 
@@ -33,7 +33,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-### example 2: Dot Chart with Color Mapping
+### Example 2: Dot Chart with Color Mapping
 
 Returns an extra `c` list that should be passed into the `c=` parameter if using `matplotlib` or `hue=` if using `seaborn`. 
 
@@ -56,7 +56,7 @@ plt.title('Mushroom Size Count Colored by Rating')
 plt.show()
 ```
 
-### example 3: Using `make_dotchart` for Simplified Plotting
+### Example 3: Using `make_dotchart` for Simplified Plotting
 
 Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
@@ -70,6 +70,8 @@ test_df = {'size': [1, 2, 3, 4, 5, 6], 'rating': [3, 2, 5, 4, 3, 6]}
 make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='gnuplot2')
 ```
 
+---
+
 # preset themes
 
 ### `custom:lavender`
@@ -80,11 +82,11 @@ make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='g
 
 Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable/users/explain/colors/colormaps.html)) will work when passed into `theme='viridis'`.
 
-**viridis**
+**viridis:**
 
 ![](/demos/default.png)
 
-**gnuplot**
+**gnuplot:**
 
 ![](/demos/gnuplot.png)
 
