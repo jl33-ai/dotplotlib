@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setup(
     name='dotplotlib', 
-    version='0.1.6',  
+    version='1.1.6',  
     author='Justin Lee', 
     author_email='justinkhlee27@gmail.com',  
     description='An extension library for creating strip plots or dot charts w/ matplotlib + seaboard',  

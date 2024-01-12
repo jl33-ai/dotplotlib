@@ -26,9 +26,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="0.78673367"
-     inkscape:cx="938.69124"
-     inkscape:cy="168.41786"
+     inkscape:zoom="0.39336683"
+     inkscape:cx="883.39934"
+     inkscape:cy="273.28181"
      inkscape:window-width="1512"
      inkscape:window-height="917"
      inkscape:window-x="0"
@@ -76,7 +76,10 @@
      width="1271.7137"
      height="180.17534"
      x="0"
-     y="0" />
+     y="0"
+     inkscape:export-filename="daterange.png"
+     inkscape:export-xdpi="81.527786"
+     inkscape:export-ydpi="81.527786" />
   <path
      d="M 48.241209,138.88717 H 1253.5212 V 19.691174 H 48.241209 Z"
      style="fill:#e6e6fa"

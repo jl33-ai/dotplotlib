@@ -3,7 +3,7 @@ import warnings
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-Y_SCALE=1.25
+Y_SCALE=1.4
 
 def dotchart(x, color_by=None, reverse=False):
     """
@@ -45,14 +45,17 @@ def dotchart(x, color_by=None, reverse=False):
         y.append(seenCount[value])
 
     recommended_ymax = int(max(seenCount.values())*Y_SCALE)
-    warning_msg = f"\n If your plot is oddly shaped, try: \n 1. Adjust the window size with your cursor \n 2. Add the following line: plt.ylim = [{0}, {recommended_ymax}], and fine tune appropriately."
+    warning_msg = f"\n If your plot is oddly shaped, try: \n 1. Adjust the window size with your cursor \n 2. Add the following line: plt.ylim = [{0}, {recommended_ymax}], and fine tune appropriately. \n 3. Create your plot in a separate script instead of inline with Jupyter and use plt.figure(figsize=(width,height))"
     warnings.simplefilter('always', UserWarning)
     warnings.warn(warning_msg)
 
-    if color_by is not None:
-        return x_out, y, color_out
-    else:
-        return x_out, y
+    try: 
+        if color_by is not None:
+            return x_out, y, color_out
+        else:
+            return x_out, y
+    except ValueError as e: 
+        raise ValueError("Custom Error: The dotchart function is expected to return 2 values when 'color_by' is not used, and 3 values when 'color_by' is used.") from e
     
 def make_dotchart(x, 
                   color_by=None, 
@@ -75,7 +78,7 @@ def make_dotchart(x,
     - x (list or pandas.Series): Data points for the x-axis.
     - color_by (list or pandas.Series, optional): Data points used for color mapping. Default is None.
     - reverse (bool, optional): If True, reverses the color mapping order. Default is False.
-    - theme (str, optional): The theme of the plot. Options are 'custom:lavender'. You map specify any cmap supported by matplotlib.
+    - theme (str, optional): The theme of the plot. Options are 'custom:lavender' or 'custom:ocean', otherwise you may specify any cmap supported by matplotlib.
     - colorbar (bool, optional): If True, includes a color bar in the plot. Default is True.
     - xlabel (str, optional): Label for the x-axis. Default is 'x'.
     - ylabel (str, optional): Label for the y-axis. Default is 'y'.
@@ -125,7 +128,23 @@ def make_dotchart(x,
                     plt.colorbar(color_map, ax=ax)
 
                 plt.show()
+            case 'custom:ocean':
+                sns.set(rc={'axes.facecolor': 'lightblue'})  # Set a light blue background
+                ax = sns.scatterplot(x=x, y=y, hue=c, s=dot_size, legend="full", palette="Blues")
+                ax.grid(False)
+                ax.get_legend().remove()
+                ax.set_xlabel(xlabel)
+                ax.set_ylabel(ylabel)
+                ax.set_title(title)
+                plt.ylim([0, recommended_ymax])
 
+                if colorbar:
+                    scale_legend = plt.Normalize(c.min(), c.max())
+                    color_map = plt.cm.ScalarMappable(cmap="Blues", norm=scale_legend)
+                    color_map.set_array([])
+                    plt.colorbar(color_map, ax=ax)
+
+                plt.show()
             case _:
                 try: 
                     plt.scatter(x, y, c=c, cmap=theme, s=dot_size)

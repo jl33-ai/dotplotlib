@@ -1,8 +1,8 @@
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png?raw=true)
 
-*Great things come in tiny packages*. A bare minimum extension library with the sole aim of providing a dot plot (aka strip plot/dot chart)
-- Designed to work with `matplotlib` and `seaborn`.
-- Provides a simple yet powerful interface for visualizing data distributions, frequencies and categories.
+*Great things come in tiny packages*. A bare minimum extension library for creating tree dot plots, strip plots or dot charts w/ matplotlib or seaborn in Python
+- Designed to work with `matplotlib` and `seaborn` in Python
+- Fully customizable
 
 # installation
 
@@ -12,7 +12,9 @@ pip install dotplotlib
 
 # basic usage
 
-`dotplotlib` can be used to generate dot charts with minimal code. Here are some basic examples
+`dotplotlib` can be used to generate dot charts with minimal code. Here are some basic examples:
+
+<br>
 
 ### Example 1: Simple Dot Chart
 
@@ -22,7 +24,6 @@ pip install dotplotlib
 from dotplotlib import dotchart
 import matplotlib.pyplot as plt
 
-# Data preparation
 data = {'size': [1, 2, 2, 3, 3, 3, 4]}
 
 # Generate dot chart data
@@ -35,13 +36,14 @@ plt.show()
 
 ### Example 2: Dot Chart with Color Mapping
 
+Pass the data you would like to color by with the `color_by=` argument. 
+
 Returns an extra `c` list that should be passed into the `c=` parameter if using `matplotlib` or `hue=` if using `seaborn`. 
 
 ```python
 from dotplotlib import dotchart
 import matplotlib.pyplot as plt
 
-# Data preparation
 data = {'size': [1, 2, 2, 3, 3, 3, 4], 'rating': [3, 2, 5, 4, 3, 6, 4]}
 
 # Generate dot chart data with color mapping
@@ -58,17 +60,33 @@ plt.show()
 
 ### Example 3: Using `make_dotchart` for Simplified Plotting
 
-Instead of just giving you `x, y` data to make the plot yourself, `make_dotplot()` actually generates the plot. 
+Instead of just giving you `x, y` lists to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
 ```python
 from dotplotlib import make_dotchart
 
-# Data preparation
-test_df = {'size': [1, 2, 2, 3, 3, 3, 4], 'rating': [3, 2, 5, 4, 3, 6, 7]}
+df = {'size': [1, 2, 2, 3, 3, 3, 4], 'rating': [3, 2, 5, 4, 3, 6, 7]}
 
-# Create a dot chart with additional customization
-make_dotchart(test_df['size'], color_by=test_df['rating'], dot_size=40, theme='gnuplot2')
+# Create a dot chart with optional arguments (only the first one is mandatory)
+make_dotchart(df['size'], 
+                  color_by=df['rating'], # list to color by
+                  reverse=False, # inverts the color mapping
+                  theme='gnuplot2', # scroll down to see all themes
+                  colorbar=True, 
+                  xlabel='Sizes', 
+                  ylabel='Size Count', 
+                  title='Mushroom Sizes Colored by Rating', 
+                  dot_size=40):
 ```
+
+### Example 4: If plotting in a Jupyter Notebook
+
+If plotting inline, use the default `.dotchart()` to obtain `x` and `y` lists, and then adjust as necessary with one of the following: 
+
+- `plt.figure(figsize=(12,6))` 
+- `plt.figure().set_figwidth(12)`
+- `plt.figure().set_figheight(12)`
+
 
 ---
 
@@ -99,9 +117,16 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 - the data can be automatically sorted for better visualization, especially when using color mapping.
 - accepts both list and pandas.Series as input data.
 - set custom labels, titles, and dot sizes for your charts.
+- works with Jupyter Notebook
 
-# credit
+# attribution
 
 - [pjarzabek](https://github.com/Pjarzabek/DotPlotPython/blob/master/How%20to%20create%20dot%20plots%20in%20Python.ipynb)
 - m3
 - ddlegal
+
+# feature requests
+
+- apply to become a contributor (pls help)
+- open an issue on our GitHub repository
+- email me: justinkhlee27\[at\]gmail.com
