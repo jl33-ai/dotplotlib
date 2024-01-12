@@ -10,9 +10,9 @@
 pip install dotplotlib
 ```
 
-# basic usage
+# usage
 
-`dotplotlib` can be used to generate dot charts with minimal code. Here are some basic examples:
+`dotplotlib` can be used to generate dot charts with minimal code. Here are some examples:
 
 <br>
 
@@ -36,9 +36,9 @@ plt.show()
 
 ### Example 2: Dot Chart with Color Mapping
 
-Pass the data you would like to color by with the `color_by=` argument. 
+Pass the data you would like to color by to the `color_by=` argument. 
 
-Returns an extra `c` list that should be passed into the `c=` parameter if using `matplotlib` or `hue=` if using `seaborn`. 
+Returns an extra list `c` that should be passed into the `c=` parameter if using `matplotlib` or `hue=` if using `seaborn`. 
 
 ```python
 from dotplotlib import dotchart
@@ -58,7 +58,7 @@ plt.title('Mushroom Size Count Colored by Rating')
 plt.show()
 ```
 
-### Example 3: Using `make_dotchart` for One-Step Plotting
+### Example 3: Using `make_dotchart` to plot in one step
 
 Instead of just giving you `x, y` lists to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
@@ -113,6 +113,10 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gnuplot.png?raw=true)
 
+**gallery:**
+
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gallery.png?raw=true)
+
 ---
 
 # features
@@ -130,8 +134,3 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 - m3
 - ddlegal
 
-# feature requests
-
-- apply to become a contributor (pls help)
-- open an issue on our GitHub repository
-- email me: justinkhlee27\[at\]gmail.com
