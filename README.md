@@ -18,7 +18,7 @@ pip install dotplotlib
 
 ### Example 1: Simple Dot Chart
 
-`.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` scatterplots. 
+`.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` [scatterplots](https://www.w3schools.com/python/matplotlib_scatter.asp). 
 
 ```python
 from dotplotlib import dotchart
@@ -58,7 +58,7 @@ plt.title('Mushroom Size Count Colored by Rating')
 plt.show()
 ```
 
-### Example 3: Using `make_dotchart` for Simplified Plotting
+### Example 3: Using `make_dotchart` for One-Step Plotting
 
 Instead of just giving you `x, y` lists to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
@@ -79,14 +79,15 @@ make_dotchart(df['size'],
                   dot_size=40):
 ```
 
-### Example 4: If plotting in a Jupyter Notebook
+### Example 4: Plotting in a Jupyter Notebook
 
 If plotting inline, use the default `.dotchart()` to obtain `x` and `y` lists, and then adjust as necessary with one of the following: 
 
-- `plt.figure(figsize=(12,6))` 
-- `plt.figure().set_figwidth(12)`
-- `plt.figure().set_figheight(12)`
-
+```python
+plt.figure(figsize=(12,6))  # or
+plt.figure().set_figwidth(12) # or
+plt.figure().set_figheight(12)
+```
 
 ---
 
