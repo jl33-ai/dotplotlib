@@ -12,10 +12,6 @@ pip install dotplotlib
 
 # usage
 
-`dotplotlib` can be used to generate dot charts with minimal code. Here are some examples:
-
-<br>
-
 ### Example 1: Simple Dot Chart
 
 `.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` [scatterplots](https://www.w3schools.com/python/matplotlib_scatter.asp). 
