@@ -89,6 +89,10 @@ plt.figure().set_figwidth(12) # or
 plt.figure().set_figheight(12)
 ```
 
+![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/jupyter.png?raw=true)
+
+<br>
+
 ---
 
 # preset themes
