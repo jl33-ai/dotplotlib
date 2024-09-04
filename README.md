@@ -1,7 +1,7 @@
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png?raw=true)
 
-*Great things come in tiny packages*. A bare minimum extension library for creating tree dot plots, strip plots or dot charts w/ matplotlib or seaborn in Python
-- Designed to work with `matplotlib` and `seaborn` in Python
+A `matplotlib` extension library for making tree dot plots, strip plots or dot charts in Python
+- Works with `seaborn`
 - Fully customizable
 
 # installation
