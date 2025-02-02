@@ -1,16 +1,20 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Unlicense License][license-shield]][license-url]
+
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/daterange.png?raw=true)
 
-A `matplotlib` extension library for making tree dot plots, strip plots or dot charts in Python
-- Works with `seaborn`
-- Fully customizable
+A `matplotlib` extension library for making tree dot plots, strip plots or dot charts in Python (`seaborn` compatible)
 
-# installation
+# Installation
 
 ```text
 pip install dotplotlib
 ```
 
-# usage
+# Usage
 
 ### Example 1: Simple Dot Chart
 
@@ -91,7 +95,7 @@ plt.figure().set_figheight(12)
 
 ---
 
-# preset themes
+# Themes
 
 ### `custom:lavender`
 
@@ -115,18 +119,22 @@ Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable
 
 ---
 
-# features
+# Feature set
 
-- generate strip plots/dot charts by exploiting `matplotlib/seaborn` scatterplots
-- supports any cmap color profile
-- the data can be automatically sorted for better visualization, especially when using color mapping.
-- accepts both list and pandas.Series as input data.
-- set custom labels, titles, and dot sizes for your charts.
-- works with Jupyter Notebook
+- Generate strip plots/dot charts by exploiting `matplotlib/seaborn` scatterplots
+- Supports any cmap color profile
+- The data can be automatically sorted for better visualization, especially when using color mapping.
+- Accepts both list and pandas.Series as input data.
+- Set custom labels, titles, and dot sizes for your charts.
+- Works with Jupyter Notebook
 
-# attribution
-
-- [pjarzabek](https://github.com/Pjarzabek/DotPlotPython/blob/master/How%20to%20create%20dot%20plots%20in%20Python.ipynb)
-- m3
-- ddlegal
-
+[contributors-shield]: https://img.shields.io/github/contributors/jl33-ai/dotplotlib.svg?style=for-the-badge
+[contributors-url]: https://github.com/jl33-ai/dotplotlib/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jl33-ai/dotplotlib.svg?style=for-the-badge
+[forks-url]: https://github.com/jl33-ai/dotplotlib/network/members
+[stars-shield]: https://img.shields.io/github/stars/jl33-ai/dotplotlib.svg?style=for-the-badge
+[stars-url]: https://github.com/jl33-ai/dotplotlib/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jl33-ai/dotplotlib.svg?style=for-the-badge
+[issues-url]: https://github.com/jl33-ai/dotplotlib/issues
+[license-shield]: https://img.shields.io/github/license/jl33-ai/dotplotlib.svg?style=for-the-badge
+[license-url]: https://github.com/jl33-ai/dotplotlib/blob/master/LICENSE.txt
