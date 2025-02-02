@@ -1,3 +1,5 @@
+# dotplotlib
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -99,7 +101,6 @@ plt.figure().set_figheight(12)
 
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gallery.png?raw=true)
 
----
 
 ### Feature set
 
@@ -110,7 +111,6 @@ plt.figure().set_figheight(12)
 - Set custom labels, titles, and dot sizes for your charts.
 - Works with Jupyter Notebook
 
----
 
 ### Contributing
 
