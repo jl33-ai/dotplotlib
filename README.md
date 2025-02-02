@@ -8,15 +8,15 @@
 
 A `matplotlib` extension library for making tree dot plots, strip plots or dot charts in Python (`seaborn` compatible)
 
-# Installation
+### Installation
 
 ```text
 pip install dotplotlib
 ```
 
-# Usage
+### Usage
 
-### Example 1: Simple Dot Chart
+###### Example 1: Simple Dot Chart
 
 `.dotchart` returns `x` and `y` lists that can be inputted straight into `matplotlib` or `seaborn` [scatterplots](https://www.w3schools.com/python/matplotlib_scatter.asp). 
 
@@ -34,7 +34,7 @@ plt.scatter(x, y)
 plt.show()
 ```
 
-### Example 2: Dot Chart with Color Mapping
+###### Example 2: Dot Chart with Color Mapping
 
 Pass the data you would like to color by to the `color_by=` argument. 
 
@@ -58,7 +58,7 @@ plt.title('Mushroom Size Count Colored by Rating')
 plt.show()
 ```
 
-### Example 3: Using `make_dotchart` to plot in one step
+###### Example 3: Using `make_dotchart` to plot in one step
 
 Instead of just giving you `x, y` lists to make the plot yourself, `make_dotplot()` actually generates the plot. 
 
@@ -79,7 +79,7 @@ make_dotchart(df['size'],
                   dot_size=40):
 ```
 
-### Example 4: Plotting in a Jupyter Notebook
+###### Example 4: Plotting in a Jupyter Notebook
 
 If plotting inline, use the default `.dotchart()` to obtain `x` and `y` lists, and then adjust as necessary with one of the following: 
 
@@ -95,13 +95,13 @@ plt.figure().set_figheight(12)
 
 ---
 
-# Themes
+### Themes
 
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gallery.png?raw=true)
 
 ---
 
-# Feature set
+### Feature set
 
 - Generate strip plots/dot charts by exploiting `matplotlib/seaborn` scatterplots
 - Supports any cmap color profile
@@ -109,6 +109,12 @@ plt.figure().set_figheight(12)
 - Accepts both list and pandas.Series as input data.
 - Set custom labels, titles, and dot sizes for your charts.
 - Works with Jupyter Notebook
+
+---
+
+### Contributing
+
+Anyone is welcome to raise a PR!
 
 [contributors-shield]: https://img.shields.io/github/contributors/jl33-ai/dotplotlib.svg?style=for-the-badge
 [contributors-url]: https://github.com/jl33-ai/dotplotlib/graphs/contributors
