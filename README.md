@@ -97,24 +97,6 @@ plt.figure().set_figheight(12)
 
 # Themes
 
-### `custom:lavender`
-
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/lavender.png?raw=true)
-
-### `cmap`
-
-Any cmap value supported by matplotlib ([see here](https://matplotlib.org/stable/users/explain/colors/colormaps.html)) will work when passed into `theme='viridis'`.
-
-**viridis:**
-
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/default.png?raw=true)
-
-**gnuplot:**
-
-![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gnuplot.png?raw=true)
-
-**gallery:**
-
 ![](https://github.com/jl33-ai/dotplotlib/blob/main/demos/gallery.png?raw=true)
 
 ---
